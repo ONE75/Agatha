@@ -26,12 +26,12 @@ namespace Agatha.Common.WCF
 
 		public RequestProcessorProxy(InstanceContext callbackInstance, Binding binding, EndpointAddress remoteAddress) : base(callbackInstance, binding, remoteAddress) { }
 
-		public Response[] Process(params Request[] requests)
+		public virtual Response[] Process(params Request[] requests)
 		{
 			return Channel.Process(requests);
 		}
 
-		public void ProcessOneWayRequests(params OneWayRequest[] requests)
+		public virtual void ProcessOneWayRequests(params OneWayRequest[] requests)
         {
 			Channel.ProcessOneWayRequests(requests);
         }
